@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>avalon单页面滑动切换</title>
+	<link type="text/css" href="index.css" rel="stylesheet"/>
+	<script type="text/javascript" src='seed-min.js'></script>
+</head>
+<body>
+	<div id='wrap' ms-controller="slide_switch">
+		<div id='tab'>
+			<ul>
+				<li ms-click='turn($index)' ms-class-cur='cur==$index' ms-repeat='heights'>TAB {{$index+1}}</li>
+			</ul>
+			<div id='cursor' ms-css-left='{{cursor_pos}}%'></div>
+		</div>
+		<div id='content'>
+			<ul ms-css-transform='translate({{-offset}}px, 0)'>
+				<li ms-attr-id='page{{$index+1}}' ms-repeat-height="heights" ms-css-height="height" ms-on-swipeleft='turn(cur-1)' ms-on-swiperight='turn(cur+1)' ms-on-touchstart='start($event)' ms-on-touchmove='move($event)' ms-on-touchend='end($event)'>page {{$index+1}}</li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript" src='index.js'></script>
+</body>
+</html>
