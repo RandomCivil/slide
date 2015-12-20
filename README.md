@@ -1,5 +1,5 @@
 # slide
-slide page with avalon
+mobile slide page with avalon
 
 [introduction](http://segmentfault.com/a/1190000003871349)
 
